@@ -1,6 +1,6 @@
 import os
 import sqlite3 
-
+#Declaracion de variables ordenadas por orden alfabetico
 array7 = []
 bono1 = 0
 bono_general1 = 0
@@ -12,16 +12,16 @@ horas_extras = 0
 salario = 0
 salario_base = 0
 salario_base2 = 0
-
+#Se crea el archivo que va guardar los calculos de los bonos
 archivo2=open("C:/Users/BP/Documents/python nomina/pago_nomina_12sep2021.py","w")
 archivo2.write("Cedula****Fecha Ingreso******Empleado***********************Sueldo Base*****Horas Extras*****Monto a Pagar\n")
-
+#Coloco el titulo en color verde 
 from colorama import Fore, init
 init()
 print(Fore.GREEN + "NOMINA DE LA EMPRESA YABADABADU")
-
+#importo los parametros relacionado con los bonos
 from script_pago_nomina import *
-
+#Leo el archivo nomina.txt
 with open('C:/Users/BP/Documents/python nomina/nomina.txt','r') as archivo:
      linea = archivo.readline()
      print("lista",len(linea))
@@ -52,7 +52,7 @@ with open('C:/Users/BP/Documents/python nomina/nomina.txt','r') as archivo:
         print("Horas Extras: ",horas_extras)
         bono_eficiencia = 0
         print ("Bono General:",bono_general1)
-
+#Valido las horas de los trabajadores para el calculo del bono de eficiencia
         if horas_extras > 5: #Bono Eficiencia
           bono_eficiencia1 = salario_base2*Bono_Eficiencia
           print ("Bono Eficienca:",bono_eficiencia1)
@@ -61,9 +61,9 @@ with open('C:/Users/BP/Documents/python nomina/nomina.txt','r') as archivo:
 
         salario = salario_base2 + bono_general1 + bono_eficiencia1
         print ("Sueldo:",salario,"$")
-        
+ #Guardo los datos de los calculos       
         archivo2.write(str (cedula) +"***"+ str (fecha_ingreso)+"*********"+ str (emp)+"***********"+ str (salario_base)+"$***************"+ str (horas_extras)+"***************"+ str (salario)+"$\n")
-        
+#Cierro los archivos       
 archivo.close()
 archivo2.close()
   
