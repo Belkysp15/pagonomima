@@ -1,4 +1,6 @@
 # encoding: utf-8
+import os
+import sqlite3 
 
-BonoGeneral=float(0.05)
-BonoEficiencia=float(0.15)
+Bono_General=float(0.05)
+Bono_Eficiencia=float(0.15)
