@@ -61,7 +61,7 @@ with open('C:/Users/BP/Documents/python nomina/nomina.txt','r') as archivo:
 
         salario = salario_base2 + bono_general1 + bono_eficiencia1
         print ("Sueldo:",salario,"$")
- #Guardo los datos de los calculos       
+#Guardo los datos de los calculos       
         archivo2.write(str (cedula) +"***"+ str (fecha_ingreso)+"*********"+ str (emp)+"***********"+ str (salario_base)+"$***************"+ str (horas_extras)+"***************"+ str (salario)+"$\n")
 #Cierro los archivos       
 archivo.close()
